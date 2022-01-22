@@ -1,0 +1,129 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\ILYASEEN19\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install
+
+PATH: 
+  C:\Users\ILYASEEN19\AppData\Roaming\npm;C:\Program Files\nodejs\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\IBM\SPSS\Statistics\25\JRE\bin;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\ILYASEEN19\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ILYASEEN19\AppData\Local\Android\Sdk\platform-tools;C:\Users\ILYASEEN19\AppData\Local\Microsoft\WindowsApps;C:\Users\ILYASEEN19\AppData\Roaming\npm;C:\Program Files\heroku\bin;
+
+Yarn version: 
+  1.22.11
+
+Node version: 
+  14.17.6
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: connect ENETUNREACH 104.16.16.35:443
+      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1148:16)
+
+npm manifest: 
+  {
+    "name": "assets_rig",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+      "@testing-library/jest-dom": "^5.11.4",
+      "@testing-library/react": "^11.1.0",
+      "@testing-library/user-event": "^12.1.10",
+      "ajv": "^6.12.2",
+      "cross-env": "^7.0.3",
+      "electron-is-dev": "^1.2.0",
+      "mdbreact": "^5.0.2",
+      "nedb-promises": "^4.0.3",
+      "react": "^17.0.1",
+      "react-dom": "^17.0.1",
+      "react-router-dom": "^5.2.0",
+      "react-scripts": "4.0.1",
+      "react-select": "^4.0.2",
+      "web-vitals": "^0.2.4"
+    },
+    "main": "public/electron.js",
+    "description": "A desktop software for assets management",
+    "author": {
+      "name": "ilyaseen19",
+      "email": "alfuty09@gmail.com",
+      "company": "Codelab"
+    },
+    "build": {
+      "appId": "assets_rig.app",
+      "productName": "ASSETS  RIG",
+      "files": [
+        "build/**/*",
+        "build/assets_rig.*"
+      ],
+      "directories": {
+        "buildResources": "build"
+      },
+      "extraResources": [
+        {
+          "from": "C:/Users/ILYASEEN19/Documents/projects/assets_rig/public/logo1.png",
+          "to": "/build/logo1.png"
+        },
+        {
+          "from": "./DataStore/",
+          "to": "DataStore/",
+          "filter": [
+            "**/*"
+          ]
+        }
+      ],
+      "win": {
+        "icon": "/build/logo1.png",
+        "target": "NSIS"
+      },
+      "nsis": {
+        "oneClick": false,
+        "allowToChangeInstallationDirectory": true,
+        "uninstallDisplayName": "Assets Rig",
+        "createDesktopShortcut": true,
+        "license": "license.txt"
+      }
+    },
+    "homepage": "./",
+    "scripts": {
+      "react-start": "rescripts  start",
+      "react-build": "rescripts build",
+      "test": "rescripts  test",
+      "eject": "rescripts eject",
+      "electron-build": "electron-builder",
+      "postinstall": "electron-builder install-app-deps",
+      "pack-app": "electron-builder --dir",
+      "build": "yarn react-build && yarn electron-build",
+      "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
+    },
+    "eslintConfig": {
+      "extends": [
+        "react-app",
+        "react-app/jest"
+      ]
+    },
+    "browserslist": {
+      "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
+    },
+    "devDependencies": {
+      "@rescripts/cli": "^0.0.15",
+      "@rescripts/rescript-env": "^0.0.12",
+      "concurrently": "^5.3.0",
+      "electron": "^8.2.5",
+      "electron-builder": "^22.9.1",
+      "electron-reloader": "^1.2.0",
+      "electron-winstaller": "^4.0.1",
+      "wait-on": "^5.2.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

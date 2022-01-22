@@ -1,0 +1,9 @@
+/node_modules
+/src/main/app/data
+
+# production
+/DataStore
+/dist
+/build
+
+license.text

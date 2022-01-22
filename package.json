@@ -1,0 +1,108 @@
+{
+  "name": "assets_rig",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "ajv": "^6.12.2",
+    "chart.js": "^3.6.2",
+    "cross-env": "^7.0.3",
+    "electron-is-dev": "^1.2.0",
+    "mdbreact": "^5.0.2",
+    "nedb-promises": "^4.0.3",
+    "react": "^17.0.1",
+    "react-chartjs-2": "^4.0.0",
+    "react-dom": "^17.0.1",
+    "react-loader-spinner": "^5.0.6",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "react-select": "^4.0.2",
+    "react-to-print": "^2.14.3",
+    "spinners-react": "^1.0.6",
+    "web-vitals": "^0.2.4"
+  },
+  "main": "public/electron.js",
+  "description": "A desktop software for assets management",
+  "author": {
+    "name": "ilyaseen19",
+    "email": "alfuty09@gmail.com",
+    "company": "Codelab"
+  },
+  "build": {
+    "appId": "assets_rig.app",
+    "productName": "ASSETS RIG",
+    "files": [
+      "build/**/*",
+      "build/assets_rig.*"
+    ],
+    "directories": {
+      "buildResources": "build"
+    },
+    "extraResources": [
+      {
+        "from": "C:/Users/ILYASEEN19/Documents/projects/assets_rig/public/assets_reg_1.png",
+        "to": "/build/assets_reg_1.png"
+      },
+      {
+        "from": "./DataStore/",
+        "to": "DataStore/",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "win": {
+      "icon": "/build/assets_reg_1.png",
+      "target": "NSIS"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "uninstallDisplayName": "Assets Rig",
+      "createDesktopShortcut": true,
+      "license": "license.txt"
+    }
+  },
+  "homepage": "./",
+  "scripts": {
+    "react-start": "rescripts  start",
+    "react-build": "rescripts build",
+    "test": "rescripts  test",
+    "eject": "rescripts eject",
+    "electron-build": "electron-builder",
+    "postinstall": "electron-builder install-app-deps",
+    "pack-app": "electron-builder --dir",
+    "build": "yarn react-build && yarn electron-build",
+    "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@rescripts/cli": "^0.0.15",
+    "@rescripts/rescript-env": "^0.0.12",
+    "concurrently": "^5.3.0",
+    "electron": "^8.2.5",
+    "electron-builder": "^22.9.1",
+    "electron-reloader": "^1.2.0",
+    "electron-winstaller": "^4.0.1",
+    "wait-on": "^5.2.1"
+  }
+}
