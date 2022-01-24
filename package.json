@@ -1,5 +1,5 @@
 {
-  "name": "assets_rig",
+  "name": "assets_reg",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
@@ -31,11 +31,11 @@
     "company": "Codelab"
   },
   "build": {
-    "appId": "assets_rig.app",
-    "productName": "ASSETS RIG",
+    "appId": "assets_reg.app",
+    "productName": "ASSETS REG",
     "files": [
       "build/**/*",
-      "build/assets_rig.*"
+      "build/assets_reg.*"
     ],
     "directories": {
       "buildResources": "build"
@@ -60,7 +60,7 @@
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
-      "uninstallDisplayName": "Assets Rig",
+      "uninstallDisplayName": "Assets Reg",
       "createDesktopShortcut": true,
       "license": "license.txt"
     }
@@ -75,7 +75,8 @@
     "postinstall": "electron-builder install-app-deps",
     "pack-app": "electron-builder --dir",
     "build": "yarn react-build && yarn electron-build",
-    "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
+    "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\"",
+    "deploy": "git add . && git status && git commit -m'comiting' && git push origin master"
   },
   "eslintConfig": {
     "extends": [

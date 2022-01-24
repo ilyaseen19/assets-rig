@@ -341,7 +341,7 @@ export default function Aside(props) {
             fontSize: 10,
           }}
         >
-          <span>ASSETS RIG MANAGEMENT SOFTWARE</span>
+          <span>ASSETS REG MANAGEMENT SOFTWARE</span>
           <span>BETA VERSION 0.0.1</span>
         </span>
       </span>

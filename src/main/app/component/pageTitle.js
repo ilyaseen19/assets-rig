@@ -1,6 +1,20 @@
+import { useEffect, useState } from "react";
 import setIcon from "./images/img/menu-icon/5.svg";
+import { functions } from "../funtions/index";
 
 export default function PageTitle(props) {
+  const [companyName, setCompanyName] = useState("");
+
+  useEffect(() => {
+    getKey();
+  });
+
+  const getKey = async () => {
+    const res = await functions._checkApiKey();
+    const company = res.split("-")[1];
+    setCompanyName(company);
+  };
+
   const renderTitle = () => {
     if (props.title === "Users") {
       return props.subTitle === "user" ? (
@@ -228,6 +242,15 @@ export default function PageTitle(props) {
                 </li>
               </ol>
             )}
+          </div>
+          <div>
+            <h2
+              style={{
+                fontWeight: "bold",
+              }}
+            >
+              {companyName}
+            </h2>
           </div>
           {renderTitle()}
         </div>

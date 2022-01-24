@@ -157,7 +157,7 @@ export default function DepartDetails(props) {
                     marginRight: "10px",
                   }}
                 >
-                  ASSETS RIG
+                  ASSETS REG
                 </span>
                 <span
                   type="button"

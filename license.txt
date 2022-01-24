@@ -1,4 +1,4 @@
-By downloading or using this software or accompanying documentation you agree to the following terms and conditions.
+By installing or using this software or accompanying documentation you agree to the following terms and conditions.
 License Grant.  You are hereby granted a personal, non-transferable and non-sublicenseable, nonexclusive, world-wide, 
 royalty free copyright license to prepare derivative works of, publicly display, publicly perform this program and any such derivative works.
 Except for the copyright license above, you are granted no other rights or licenses, by implication, or estoppel, or otherwise, under any patents 

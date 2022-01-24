@@ -6,6 +6,7 @@ const apiKeyUrl = Data.apiKeyCheckUrl;
 const usersBaseUrl = Data.usersBaseUrl;
 const assetsBaseUrl = Data.assetBaseUrl;
 const initialsStore = Data.initDbInstance;
+const branchStore = Data.branchDbInstance;
 
 // check api key
 const _checkApiKey = async () => {
@@ -27,6 +28,16 @@ const _getTypes = async () => {
     }
   });
   return key;
+};
+
+const _getBranches = async () => {
+  let branches = [];
+  await branchStore.readAll().then((res) => {
+    if (res.length !== 0) {
+      return (branches = res);
+    }
+  });
+  return branches;
 };
 
 // get departments
@@ -160,6 +171,18 @@ const _addTypes = async (data) => {
   return results;
 };
 
+const _addBranch = async (data) => {
+  var results;
+  const branches = await _getBranches();
+  if (branches.some((item) => item.type === data)) {
+    results = "This Branche Already Exist!";
+  } else {
+    branchStore.create({ type: data });
+    results = "Branche Added successfully!";
+  }
+  return results;
+};
+
 const _addDepartment = async (data) => {
   var results;
   const getDeparts = await _getDepartments();
@@ -186,7 +209,18 @@ const _addInitials = async (data) => {
 
 const _createAsset = async (data) => {
   var response;
-  const { type, depart, brand, dp, price, condition, date, initials } = data;
+  const {
+    type,
+    depart,
+    brand,
+    dp,
+    price,
+    condition,
+    date,
+    initials,
+    Qt,
+    branch,
+  } = data;
   const key = await _checkApiKey();
   const assetsUrl = assetsBaseUrl + "createAsset/" + key + "-a";
   await fetch(assetsUrl, {
@@ -204,6 +238,8 @@ const _createAsset = async (data) => {
       initials: initials,
       condition: condition,
       date: date,
+      quantity: Qt,
+      branch: branch,
     }),
   })
     .then((response) => response.json())
@@ -381,6 +417,8 @@ const _createRep = async (data) => {
 };
 
 export const functions = {
+  _addBranch,
+  _getBranches,
   _FetchallDAta,
   _checkApiKey,
   _configureSystem,

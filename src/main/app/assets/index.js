@@ -150,7 +150,7 @@ export default function Assets(props) {
                         marginRight: "10px",
                       }}
                     >
-                      ASSETS RIG
+                      ASSETS REG
                     </span>
                     <span
                       type="button"

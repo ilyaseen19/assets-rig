@@ -25,12 +25,14 @@ function MainPage(props) {
   const [initials, setInit] = useState([]);
   const [loading, setLoading] = useState(false);
   const [assetDirect, setAssetDirect] = useState("asset");
+  const [branches, setBranches] = useState([]);
 
   useEffect(() => {
     getUser();
     getTypes();
     getDeps();
     getInit();
+    getBranchs();
   }, []);
 
   const assets = props.assets;
@@ -50,6 +52,11 @@ function MainPage(props) {
   const getTypes = async () => {
     const types = await functions._getTypes();
     setTypes(types);
+  };
+
+  const getBranchs = async () => {
+    const branches = await functions._getBranches();
+    setBranches(branches);
   };
 
   const getDeps = async () => {
@@ -115,6 +122,26 @@ function MainPage(props) {
         setNotify(true);
       } else {
         await getInit();
+        setType("success");
+        setMsg(res);
+        setNotify(true);
+      }
+    }
+  };
+
+  const _handleAddBranch = async (data) => {
+    if (data === "") {
+      setType("danger");
+      setMsg("Field cannot be empty");
+      setNotify(true);
+    } else {
+      const res = await functions._addBranch(data);
+      if (res === "Branch has already been added!") {
+        setType("danger");
+        setMsg(res);
+        setNotify(true);
+      } else {
+        await getBranchs();
         setType("success");
         setMsg(res);
         setNotify(true);
@@ -313,6 +340,7 @@ function MainPage(props) {
                 onMoveAsset={_handleMoveAsset}
                 user={user}
                 stopLoading={() => setLoading(false)}
+                branches={branches}
               />
             ) : (
               <Switch>
@@ -386,6 +414,7 @@ function MainPage(props) {
                       onAddType={_handleAddType}
                       onAddDep={_handleAddDep}
                       onAddInit={_handleAddInit}
+                      onAddBranch={_handleAddBranch}
                       onClose={_handleClose}
                       user={user}
                       onAddUsers={_handleAddUsers}

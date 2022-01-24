@@ -12,6 +12,7 @@ export default function Settings(props) {
   const [usn, setusn] = useState(false);
   const [usmsg, setusmg] = useState("");
   const [ustype, setusType] = useState("");
+  const [branch, setBranch] = useState("");
 
   const users = props.data;
   const notify = props.notify;
@@ -49,6 +50,17 @@ export default function Settings(props) {
       return false;
     } else {
       props.onAddType(types);
+    }
+  };
+
+  const _handleAddbranch = () => {
+    if (user.ROLE === "CEO") {
+      setusType("danger");
+      setusmg("You are not authorised to view this page!");
+      setusn(true);
+      return false;
+    } else {
+      props.onAddBranch(branch);
     }
   };
 
@@ -150,6 +162,9 @@ export default function Settings(props) {
                         ) : (
                           <></>
                         )}
+                        <small style={{ color: "red" }}>
+                          Enter new asset type and save.
+                        </small>
                         <div className="input-group mb-3">
                           <input
                             type="text"
@@ -171,6 +186,9 @@ export default function Settings(props) {
                             </button>
                           </div>
                         </div>
+                        <small style={{ color: "red" }}>
+                          Enter new department name and save.
+                        </small>
                         <div className="input-group mb-3">
                           <input
                             type="text"
@@ -193,6 +211,33 @@ export default function Settings(props) {
                             </button>
                           </div>
                         </div>
+                        <small style={{ color: "red" }}>
+                          Enter a branch of your company and save.
+                        </small>
+                        <div className="input-group mb-3">
+                          <input
+                            type="text"
+                            className="form-control"
+                            placeholder="Add new branch"
+                            aria-label="Add new branch"
+                            onChange={(e) =>
+                              setBranch(e.target.value.toUpperCase())
+                            }
+                          />
+                          <div className="input-group-append">
+                            <button
+                              className="btn btn-light"
+                              type="button"
+                              role="button"
+                              onClick={(e) => _handleAddbranch(e)}
+                            >
+                              Add Brach
+                            </button>
+                          </div>
+                        </div>
+                        <small style={{ color: "red" }}>
+                          Enter a 3 letter word or abbriviation of your company.
+                        </small>
                         <div className="input-group mb-3">
                           <input
                             type="text"

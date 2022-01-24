@@ -7,11 +7,13 @@ const assetTypeStore = require("./db/stores/assetStore");
 const departmentStore = require("./db/stores/departmentStore");
 const keyStore = require("./db/stores/keyStore");
 const initStore = require("./db/stores/initStore");
+const branchStore = require("./db/stores/branchStore");
 
 global.assetTypeStore = assetTypeStore;
 global.departmentStore = departmentStore;
 global.keyStore = keyStore;
 global.initStore = initStore;
+global.branchStore = branchStore;
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -25,7 +27,7 @@ function createWindow() {
 
   win.maximize();
   win.show();
-  // win.removeMenu();
+  win.removeMenu();
 
   win.loadURL(
     isDev

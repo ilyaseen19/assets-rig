@@ -14,13 +14,13 @@ export default function Help(props) {
                     <div className="box_header m-0">
                       <div className="main-title">
                         <h2 className="m-0">ASSETS MANAGEMENT SYSTEM</h2>
-                        <h2 className="m-0">Assets-RIG</h2>
-                        <h3 className="m-0">MOTTO: Record, Identify, Report</h3>
+                        <h2 className="m-0">ASSETS-REG</h2>
+                        <h3 className="m-0"> Record, Identify, Report</h3>
                       </div>
                     </div>
                   </div>
                   <div className="white_card_body centered">
-                    <h2 className="m-0">REQUEST FOR ASSETS-RIG</h2>
+                    <h2 className="m-0">REQUEST FOR ASSETS-REG</h2>
                     <h3>Form on the website</h3>
                     <span
                       style={{

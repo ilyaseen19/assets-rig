@@ -149,7 +149,7 @@ export default function Reports(props) {
                       marginRight: "10px",
                     }}
                   >
-                    ASSETS RIG
+                    ASSETS REG
                   </span>
                   <span
                     type="button"

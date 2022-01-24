@@ -14,8 +14,8 @@ export default function Faq(props) {
                     <div className="box_header m-0">
                       <div className="main-title">
                         <h2 className="m-0">ASSETS MANAGEMENT SYSTEM</h2>
-                        <h2 className="m-0">Assets-RIG</h2>
-                        <h3 className="m-0">MOTTO: Record, Identify, Report</h3>
+                        <h2 className="m-0">ASSETS-REG</h2>
+                        <h3 className="m-0">Record, Identify, Report</h3>
                       </div>
                     </div>
                   </div>
@@ -47,7 +47,7 @@ export default function Faq(props) {
                       <span>5.QRcode app</span>
                     </span>
                     <h3 className="mt-3">CURRENT VERSION</h3>
-                    <span>ASSETS RIG BETA 0.0.1</span>
+                    <span>ASSETS REG BETA 0.0.1</span>
                     <p>-----</p>
                     <span>POWERED BY</span>
                     <h5>CODE LAB FIRM</h5>
