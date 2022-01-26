@@ -220,6 +220,7 @@ const _createAsset = async (data) => {
     initials,
     Qt,
     branch,
+    dntBy,
   } = data;
   const key = await _checkApiKey();
   const assetsUrl = assetsBaseUrl + "createAsset/" + key + "-a";
@@ -240,6 +241,7 @@ const _createAsset = async (data) => {
       date: date,
       quantity: Qt,
       branch: branch,
+      donatedBy: dntBy,
     }),
   })
     .then((response) => response.json())
@@ -361,6 +363,7 @@ const _editAsset = async (data) => {
       condition: data.condition,
       status: data.status,
       value: data.value,
+      tran: data.tran,
     }),
   })
     .then((response) => response.json())

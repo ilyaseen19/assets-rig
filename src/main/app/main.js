@@ -162,8 +162,8 @@ function MainPage(props) {
     const res = await functions._createAsset(data);
     if (res.success === 1) {
       await props.getAssets();
+      setRedirect(false);
       setLoading(false);
-      _clicked();
     } else {
       setLoading(false);
       setType("danger");

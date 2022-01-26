@@ -58,6 +58,16 @@ export default function Reports(props) {
     return res;
   };
 
+  const _handleTrans = () => {
+    var res = 0;
+    assets.forEach((item) => {
+      if (item.CONDITION === "TRANSFERED") {
+        res += 1;
+      }
+    });
+    return res;
+  };
+
   const _handleDamagedAssets = () => {
     var res = 0;
     assets.forEach((item) => {
@@ -81,8 +91,8 @@ export default function Reports(props) {
   const _handleAssetTypes = () => {
     var res = [];
     assets.forEach((item) => {
-      if (!res.includes(item.ASSETTYPE)) {
-        res.push(item.ASSETTYPE);
+      if (!res.includes(item.ASSETTYPE.split("-")[0])) {
+        res.push(item.ASSETTYPE.split("-")[0]);
       }
     });
     return res;
@@ -253,6 +263,18 @@ export default function Reports(props) {
                   </span>
                   <span style={{ width: "50%", marginBottom: "20px" }}>
                     {_handleRepairsAssets()}
+                  </span>
+                  <span
+                    style={{
+                      width: "50%",
+                      paddingLeft: "70px",
+                      marginBottom: "20px",
+                    }}
+                  >
+                    Transfered Assets:
+                  </span>
+                  <span style={{ width: "50%", marginBottom: "20px" }}>
+                    {_handleTrans()}
                   </span>
                   <span
                     style={{

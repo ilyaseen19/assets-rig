@@ -10,6 +10,7 @@ export default function AddAsset(props) {
   const [branch, setBranch] = useState("");
   const [Qt, setQ] = useState("");
   const [dp, setDP] = useState("");
+  const [dntBy, setdntBy] = useState("");
   const [price, setPrice] = useState("");
   const [condition, setCondition] = useState("");
   const [date, setDate] = useState("");
@@ -43,6 +44,10 @@ export default function AddAsset(props) {
       setmType("danger");
       setMsg("All fields are required!");
       setNotify(true);
+    } else if (dp === "DONATED" && dntBy === "") {
+      setmType("danger");
+      setMsg("Please provide a doner!");
+      setNotify(true);
     } else {
       const data = {
         type,
@@ -55,6 +60,7 @@ export default function AddAsset(props) {
         initials,
         Qt,
         branch,
+        dntBy,
       };
       props.onAdd(data);
     }
@@ -282,6 +288,22 @@ export default function AddAsset(props) {
                       onChange={(e) => setDate(e.target.value)}
                     />
                   </div>
+                  {dp === "DONATED" ? (
+                    <div className="input-group mb-3">
+                      <div className="input-group-prepend">
+                        <span className="input-group-text" id="basic-addon3">
+                          Donated BY:
+                        </span>
+                      </div>
+                      <input
+                        type="text"
+                        className="form-control"
+                        onChange={(e) => setdntBy(e.target.value.toUpperCase())}
+                      />
+                    </div>
+                  ) : (
+                    <span></span>
+                  )}
                   {loading ? (
                     <span className="btn btn-primary">
                       <Loaders loading={loading} />

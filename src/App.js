@@ -216,7 +216,7 @@ function App() {
   const _sortAssetsCond = async (data) => {
     if (data !== null || data !== undefined) {
       const groupInfo = data.reduce((groups, item) => {
-        const { NEW = 0, OLD = 0, DAMAGED = 0, REPAIRS = 0 } = groups;
+        const { NEW = 0, OLD = 0, DAMAGED = 0, REPAIRS = 0, TRANSFERED } = groups;
         if (item.CONDITION === "NEW") {
           return { ...groups, NEW: NEW + 1 };
         } else if (item.CONDITION === "OLD") {
@@ -225,6 +225,8 @@ function App() {
           return { ...groups, DAMAGED: DAMAGED + 1 };
         } else if (item.CONDITION === "REPAIRS") {
           return { ...groups, REPAIRS: REPAIRS + 1 };
+        } else if (item.CONDITION === "TRANSFERED") {
+          return { ...groups, TRANSFERED: TRANSFERED + 1 };
         }
       }, {});
       setSortedCond(groupInfo);

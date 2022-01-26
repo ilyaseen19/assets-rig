@@ -14,6 +14,7 @@ export default function AssetDetails(props) {
   const [edit, setEdit] = useState(false);
   const [editStatus, setEditStatus] = useState(false);
   const [editCondition, setEditCondition] = useState(false);
+  const [tran, setTrans] = useState("");
   const [showNoti, setShowNoti] = useState(false);
   const [condition, setCondition] = useState("");
   const [department, setDepartment] = useState("");
@@ -77,6 +78,7 @@ export default function AssetDetails(props) {
           condition: item.CONDITION,
           status: item.STATUS,
           value: item.VALUE,
+          tran: item.TRANSFEREDTO,
         };
         await props.onEditAsset(data);
       }
@@ -86,16 +88,37 @@ export default function AssetDetails(props) {
         setErrType("danger");
         setShowNoti(true);
       } else {
-        const data = {
-          serialNumber: item.SERIALNUMBER,
-          assetType: item.ASSETTYPE,
-          brand: item.BRAND,
-          department: item.DEPARTMENT,
-          condition: condition,
-          status: item.STATUS,
-          value: item.VALUE,
-        };
-        props.onEditAsset(data);
+        if (condition === "TRANSFERED") {
+          if (tran === "") {
+            setMsg("Please provide where item is transfered to!");
+            setErrType("danger");
+            setShowNoti(true);
+          } else {
+            const data = {
+              serialNumber: item.SERIALNUMBER,
+              assetType: item.ASSETTYPE,
+              brand: item.BRAND,
+              department: item.DEPARTMENT,
+              condition: condition,
+              status: item.STATUS,
+              value: item.VALUE,
+              tran: tran,
+            };
+            props.onEditAsset(data);
+          }
+        } else {
+          const data = {
+            serialNumber: item.SERIALNUMBER,
+            assetType: item.ASSETTYPE,
+            brand: item.BRAND,
+            department: item.DEPARTMENT,
+            condition: condition,
+            status: item.STATUS,
+            value: item.VALUE,
+            tran: item.TRANSFEREDTO,
+          };
+          props.onEditAsset(data);
+        }
       }
     } else {
       if (status === "") {
@@ -111,6 +134,7 @@ export default function AssetDetails(props) {
           condition: item.CONDITION,
           status: status,
           value: item.VALUE,
+          tran: item.TRANSFEREDTO,
         };
         props.onEditAsset(data);
       }
@@ -270,6 +294,7 @@ export default function AssetDetails(props) {
                             <option value="old">OLD</option>
                             <option value="damaged">DAMAGED</option>
                             <option value="repairs">REPAIRS</option>
+                            <option value="transfered">TRANSFERED</option>
                           </select>
                         ) : (
                           <input
@@ -323,6 +348,22 @@ export default function AssetDetails(props) {
                           )}
                         </div>
                       </div>
+                      {condition === "TRANSFERED" ? (
+                        <div className="input-group mb-3">
+                          <input
+                            type="text"
+                            className="form-control"
+                            placeholder="Tranfered to"
+                            aria-label="Recipient's username"
+                            aria-describedby="button-addon-group"
+                            onChange={(e) =>
+                              setTrans(e.target.value.toUpperCase())
+                            }
+                          />
+                        </div>
+                      ) : (
+                        <span></span>
+                      )}
                       <div className="input-group mb-3">
                         {editStatus ? (
                           <select
@@ -438,17 +479,33 @@ export default function AssetDetails(props) {
                             Brand : {item.BRAND}
                           </p>
                           <p className="text-muted mb-0">
-                            Price : {item.VALUE}
+                            Value : {item.VALUE}
                           </p>
                           <p className="text-muted mb-0">
                             Status : {item.STATUS}
                           </p>
                           <p className="text-muted mb-0">
-                            Date Purchased / Donated :{" "}
-                            {item.DATEOFPURCHASEORDONATED}
+                            Transfered :{" "}
+                            {item.CONDITION === "TRANSFERED" ? "YES" : "NO"}
+                          </p>
+                          <p className="text-muted mb-0">
+                            Transfered To :{" "}
+                            {item.CONDITION === "TRANSFERED"
+                              ? item.TRANSFEREDTO
+                              : ""}
                           </p>
                           <p className="text-muted mb-0">
                             Purchased / Donated : {item.DONATEDORPURCHASED}
+                          </p>
+                          <p className="text-muted mb-0">
+                            Donated By :{" "}
+                            {item.DONATEDORPURCHASED === "DONATED"
+                              ? item.DONATEDBY
+                              : ""}
+                          </p>
+                          <p className="text-muted mb-0">
+                            Date Purchased / Donated :{" "}
+                            {item.DATEOFPURCHASEORDONATED}
                           </p>
                           <p className="text-muted mb-0">
                             Date Added :{" "}

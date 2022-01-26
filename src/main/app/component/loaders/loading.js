@@ -23,6 +23,7 @@ export default function LoadingPage(props) {
           justifyContent: "center",
           alignItems: "center",
           height: "100vh",
+          backgroundColor: "#64c5b1",
           flexDirection: "column",
         }}
       >

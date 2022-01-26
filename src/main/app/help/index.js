@@ -62,6 +62,7 @@ export default function Help(props) {
                     <h5>For your updates and downloads contact support team</h5>
                     <span>Email: alfuty09@gmail.com</span>
                     <span>Phone: 0547661420</span>
+                    <span>Email: mubareeq@gmail.com</span>
                     <span>Phone: 0546920418</span>
                     <span>Website: -----</span>
                   </div>

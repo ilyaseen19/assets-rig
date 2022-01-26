@@ -55,7 +55,11 @@
     ],
     "win": {
       "icon": "/build/assets_reg_1.png",
-      "target": "NSIS"
+      "target": "NSIS",
+      "arch": [
+        "x64",
+        "ia32"
+      ]
     },
     "nsis": {
       "oneClick": false,
@@ -76,7 +80,7 @@
     "pack-app": "electron-builder --dir",
     "build": "yarn react-build && yarn electron-build",
     "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\"",
-    "deploy": "git add . && git status && git commit -m'comiting' && git push origin master"
+    "deploy": "git add . && git status && git commit -m'commiting' && git push origin master"
   },
   "eslintConfig": {
     "extends": [
