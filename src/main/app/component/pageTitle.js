@@ -16,6 +16,8 @@ export default function PageTitle(props) {
     const res = await props.getAssets();
     if (res === 1) {
       setLoading(false);
+    } else {
+      setLoading(false);
     }
   };
 
