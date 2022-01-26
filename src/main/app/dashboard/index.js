@@ -21,6 +21,7 @@ export default function Dashboard(props) {
         <PageTitle
           title="Dashboard"
           createAsset={props.onCreate}
+          getAssets={props.getAssets}
           onSettingsClicked={() => setRedirect("setings")}
         />
         <div className="row">

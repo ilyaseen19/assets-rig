@@ -201,22 +201,32 @@ function App() {
   };
 
   const _handleGetAssets = async () => {
+    var res = 0;
     const as = await functions._fetchAssets();
     if (as !== null) {
       setAssets(as);
       _sortAssetsCond(as);
       _sortAssetsStatus(as);
       _valuateAssets(as);
+      res = 1;
     } else {
       setAssets([]);
+      res = 0;
     }
+    return res;
   };
 
   // handle sort assets
   const _sortAssetsCond = async (data) => {
     if (data !== null || data !== undefined) {
       const groupInfo = data.reduce((groups, item) => {
-        const { NEW = 0, OLD = 0, DAMAGED = 0, REPAIRS = 0, TRANSFERED } = groups;
+        const {
+          NEW = 0,
+          OLD = 0,
+          DAMAGED = 0,
+          REPAIRS = 0,
+          TRANSFERED,
+        } = groups;
         if (item.CONDITION === "NEW") {
           return { ...groups, NEW: NEW + 1 };
         } else if (item.CONDITION === "OLD") {

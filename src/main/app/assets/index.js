@@ -129,6 +129,7 @@ export default function Assets(props) {
         <PageTitle
           title="Assets"
           createAsset={props.onCreate}
+          getAssets={props.getAssets}
           onSettingsClicked={() => setRedirect("settings")}
         />
         <PrintAllAssets

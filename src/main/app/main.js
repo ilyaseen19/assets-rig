@@ -157,13 +157,26 @@ function MainPage(props) {
     setAssetDirect(data);
   };
 
+  const _handleGetAssets = async () => {
+    var re = 0;
+    const res = await props.getAssets();
+    if (res === 1) {
+      re = 1;
+    } else {
+      re = 0;
+    }
+    return re;
+  };
+
   const _handleAddAsset = async (data) => {
     setLoading(true);
     const res = await functions._createAsset(data);
     if (res.success === 1) {
-      await props.getAssets();
-      setRedirect(false);
-      setLoading(false);
+      const re = await props.getAssets();
+      if (re === 1) {
+        setRedirect(false);
+        setLoading(false);
+      }
     } else {
       setLoading(false);
       setType("danger");
@@ -350,6 +363,7 @@ function MainPage(props) {
                     <Dashboard
                       {...props}
                       onCreate={_clicked}
+                      getAssets={_handleGetAssets}
                       assets={assets}
                       sorted={sorted}
                       status={status}
@@ -363,6 +377,7 @@ function MainPage(props) {
                     <Assets
                       {...props}
                       onCreate={_clicked}
+                      getAssets={_handleGetAssets}
                       assets={assets}
                       loading={loading}
                       msg={msg}
@@ -384,6 +399,7 @@ function MainPage(props) {
                     <Departments
                       {...props}
                       onCreate={_clicked}
+                      getAssets={_handleGetAssets}
                       assets={assets}
                     />
                   )}
@@ -391,13 +407,23 @@ function MainPage(props) {
                 <Route
                   path="/main/reports"
                   render={(props) => (
-                    <Reports {...props} onCreate={_clicked} assets={assets} />
+                    <Reports
+                      {...props}
+                      onCreate={_clicked}
+                      getAssets={_handleGetAssets}
+                      assets={assets}
+                    />
                   )}
                 />
                 <Route
                   path="/main/Inventory"
                   render={(props) => (
-                    <Inventory {...props} onCreate={_clicked} assets={assets} />
+                    <Inventory
+                      {...props}
+                      onCreate={_clicked}
+                      getAssets={_handleGetAssets}
+                      assets={assets}
+                    />
                   )}
                 />
                 <Route
@@ -406,6 +432,7 @@ function MainPage(props) {
                     <Settings
                       {...props}
                       onCreate={_clicked}
+                      getAssets={_handleGetAssets}
                       logOut={_handleLogOut}
                       type={type}
                       message={msg}

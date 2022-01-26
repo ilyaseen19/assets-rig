@@ -55,10 +55,13 @@
     ],
     "win": {
       "icon": "/build/assets_reg_1.png",
-      "target": "NSIS",
-      "arch": [
-        "x64",
-        "ia32"
+      "target": [
+        {
+          "target": "NSIS",
+          "arch": [
+            "x64"
+          ]
+        }
       ]
     },
     "nsis": {

@@ -78,6 +78,7 @@ export default function Inventory(props) {
         <PageTitle
           title="Inventory"
           createAsset={props.onCreate}
+          getAssets={props.getAssets}
           onSettingsClicked={() => setmRedirect("settings")}
         />
         <div className="row">

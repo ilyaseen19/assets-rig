@@ -1,13 +1,23 @@
 import { useEffect, useState } from "react";
 import setIcon from "./images/img/menu-icon/5.svg";
 import { functions } from "../funtions/index";
+import Loaders from "./loaders/round";
 
 export default function PageTitle(props) {
   const [companyName, setCompanyName] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     getKey();
   });
+
+  const _handleReferesh = async () => {
+    setLoading(true);
+    const res = await props.getAssets();
+    if (res === 1) {
+      setLoading(false);
+    }
+  };
 
   const getKey = async () => {
     const res = await functions._checkApiKey();
@@ -160,6 +170,21 @@ export default function PageTitle(props) {
     } else {
       return (
         <div className="row align-items-center justify-content-between">
+          {loading ? (
+            <span className="white_btn3" style={{ marginRight: "10px" }}>
+              <Loaders loading={loading} />
+            </span>
+          ) : (
+            <span
+              type="button"
+              role="button"
+              className="white_btn3"
+              style={{ marginRight: "10px" }}
+              onClick={() => _handleReferesh()}
+            >
+              <i className="fa fa-sync" title="referesh"></i>
+            </span>
+          )}
           <span
             type="button"
             role="button"

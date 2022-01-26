@@ -48,6 +48,7 @@ export default function Departments(props) {
         <PageTitle
           title="Departments"
           createAsset={props.onCreate}
+          getAssets={props.getAssets}
           onSettingsClicked={() => setmRedirect("settings")}
         />
         <div className="row">
