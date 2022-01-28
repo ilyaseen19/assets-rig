@@ -72,11 +72,11 @@ function Login(props) {
                 }}
               >
                 <span>Best Cloud Based Assets Managenent System</span>
-                <div>ASSETS RIG</div>
+                <div>ASSETS REG</div>
                 <span> Record, Identify, Report</span>
               </span>
             </div>
-            <div
+            {/* <div
               className="col-md-6"
               style={{
                 width: "80%",
@@ -89,8 +89,8 @@ function Login(props) {
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
               }}
-            ></div>
-            <div className="col-md-6 centered">
+            ></div> */}
+            <div className="col-md-6">
               {/* sign_in  */}
               {props.myKey !== "" ? (
                 <div className="modal-content cs_modal">

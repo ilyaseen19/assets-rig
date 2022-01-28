@@ -12,6 +12,7 @@ import { functions } from "./funtions";
 import Departments from "./deps";
 import Help from "./help";
 import Faq from "./faq";
+import Branches from "./branches";
 
 function MainPage(props) {
   const [redirect, setRedirect] = useState(false);
@@ -331,6 +332,18 @@ function MainPage(props) {
     }
   };
 
+  const _handleDelMany = async (ids) => {
+    var res = 0;
+    const re = await functions._delMany(ids);
+    if (re.success === 1) {
+      await props.getAssets()
+      res = 1;
+    } else {
+      res = 0;
+    }
+    return res;
+  };
+
   return (
     <div className="crm_body_bg">
       <Aside />
@@ -390,6 +403,18 @@ function MainPage(props) {
                       user={user}
                       value={value}
                       stopLoading={() => setLoading(false)}
+                      delMany={_handleDelMany}
+                    />
+                  )}
+                />
+                 <Route
+                  path="/main/branches"
+                  render={(props) => (
+                    <Branches
+                      {...props}
+                      onCreate={_clicked}
+                      getAssets={_handleGetAssets}
+                      assets={assets}
                     />
                   )}
                 />

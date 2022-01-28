@@ -106,6 +106,10 @@ export default function Assets(props) {
     return res;
   };
 
+  const _handleDelMany = async (ids) => {
+    await props.delMany(ids);
+  };
+
   if (redirect === "asset_details") {
     return (
       <AssetDetails
@@ -179,7 +183,12 @@ export default function Assets(props) {
                     />
                   </div>
                 </div>
-                <Table data={tdata} onClick={_handleRowClick} />
+                <Table
+                  data={tdata}
+                  assets={assets}
+                  onClick={_handleRowClick}
+                  del={_handleDelMany}
+                />
                 <div className="col-lg-12">
                   <div className="white_box mb_30">
                     <nav aria-label="Page navigation example">

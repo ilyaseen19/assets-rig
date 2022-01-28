@@ -485,6 +485,9 @@ export default function AssetDetails(props) {
                             Status : {item.STATUS}
                           </p>
                           <p className="text-muted mb-0">
+                            Branch : {item.BRANCH}
+                          </p>
+                          <p className="text-muted mb-0">
                             Transfered :{" "}
                             {item.CONDITION === "TRANSFERED" ? "YES" : "NO"}
                           </p>

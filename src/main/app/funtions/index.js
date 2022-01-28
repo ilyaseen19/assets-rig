@@ -394,6 +394,27 @@ const _delAsset = async (id) => {
   return results;
 };
 
+const _delMany = async (ids) => {
+  var results;
+  const key = await _checkApiKey();
+  const assetsUrl = assetsBaseUrl + "batchDel/" + key + "-a";
+  await fetch(assetsUrl, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      ids: ids,
+    }),
+  })
+    .then((response) => response.json())
+    .then((res) => {
+      results = res;
+    });
+  return results;
+};
+
 const _createRep = async (data) => {
   var results;
   const key = await _checkApiKey();
@@ -420,6 +441,7 @@ const _createRep = async (data) => {
 };
 
 export const functions = {
+  _delMany,
   _addBranch,
   _getBranches,
   _FetchallDAta,

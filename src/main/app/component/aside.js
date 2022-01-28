@@ -9,6 +9,7 @@ import repIcon from "./images/img/menu-icon/5.svg";
 import setIcon from "./images/img/menu-icon/6.svg";
 import hlpIcon from "./images/img/menu-icon/9.svg";
 import abtIcon from "./images/img/menu-icon/12.svg";
+import brIcon from "./images/img/menu-icon/14.svg";
 
 export default function Aside(props) {
   const [actDash, setDash] = useState("mm-active");
@@ -19,6 +20,7 @@ export default function Aside(props) {
   const [sett, setSett] = useState("");
   const [faq, setFaq] = useState("");
   const [hlp, setHelp] = useState("");
+  const [br, setBr] = useState("");
 
   const toggle = (check) => {
     switch (check) {
@@ -31,6 +33,7 @@ export default function Aside(props) {
         setSett("");
         setFaq("");
         setHelp("");
+        setBr("");
         break;
       case "ass":
         setDash("");
@@ -41,6 +44,7 @@ export default function Aside(props) {
         setSett("");
         setFaq("");
         setHelp("");
+        setBr("");
         break;
       case "inv":
         setDash("");
@@ -51,6 +55,7 @@ export default function Aside(props) {
         setSett("");
         setFaq("");
         setHelp("");
+        setBr("");
         break;
       case "dep":
         setDash("");
@@ -61,6 +66,7 @@ export default function Aside(props) {
         setSett("");
         setFaq("");
         setHelp("");
+        setBr("");
         break;
       case "rep":
         setDash("");
@@ -71,6 +77,7 @@ export default function Aside(props) {
         setSett("");
         setFaq("");
         setHelp("");
+        setBr("");
         break;
       case "set":
         setDash("");
@@ -81,6 +88,7 @@ export default function Aside(props) {
         setSett("mm-active");
         setFaq("");
         setHelp("");
+        setBr("");
         break;
       case "faq":
         setDash("");
@@ -91,6 +99,7 @@ export default function Aside(props) {
         setSett("");
         setFaq("mm-active");
         setHelp("");
+        setBr("");
         break;
       case "hlp":
         setDash("");
@@ -101,6 +110,18 @@ export default function Aside(props) {
         setSett("");
         setFaq("");
         setHelp("mm-active");
+        setBr("");
+        break;
+      case "br":
+        setDash("");
+        setAss("");
+        setInv("");
+        setDep("");
+        setRep("");
+        setSett("");
+        setFaq("");
+        setHelp("");
+        setBr("mm-active");
         break;
 
       default:
@@ -160,6 +181,29 @@ export default function Aside(props) {
               <img src={assetIcon} alt="logo" />
             </div>
             <span style={{ marginTop: 5 }}>Assets</span>
+          </Link>
+        </li>
+        <li className={br}>
+          <Link
+            to="/main/branches"
+            className="has-arrow row"
+            aria-expanded="false"
+            style={{
+              width: "100%",
+              justifyContent: "left",
+              alignItems: "center",
+              color: "white",
+              marginLeft: 50,
+              marginBottom: 20,
+            }}
+            type="button"
+            role="button"
+            onClick={() => toggle("br")}
+          >
+            <div className="icon_menu" style={{ marginRight: 10 }}>
+              <img src={brIcon} alt="logo" />
+            </div>
+            <span style={{ marginTop: 5 }}>Branches</span>
           </Link>
         </li>
         <li className={inv}>
