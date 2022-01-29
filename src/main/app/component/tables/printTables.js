@@ -8,10 +8,10 @@ export default function PrintTable(props) {
           <tr>
             <th scope="col">ASSET TYPE</th>
             <th scope="col">SERIAL NUMBER</th>
+            <th scope="col">BRANCH</th>
             <th scope="col">DEPARTMENT</th>
             <th scope="col">BRAND</th>
             <th scope="col">CONDITION</th>
-            <th scope="col">D/P</th>
             <th scope="col">VALUE</th>
             <th scope="col">DATE</th>
           </tr>
@@ -29,10 +29,10 @@ export default function PrintTable(props) {
                 <tr key={item._id}>
                   <td>{item.ASSETTYPE}</td>
                   <td>{item.SERIALNUMBER}</td>
+                  <td>{item.BRANCH}</td>
                   <td>{item.DEPARTMENT}</td>
                   <td>{item.BRAND}</td>
                   <td>{item.CONDITION}</td>
-                  <td>{item.DONATEDORPURCHASED}</td>
                   <td>{item.VALUE}</td>
                   <td>{item.DATEOFPURCHASEORDONATED}</td>
                 </tr>

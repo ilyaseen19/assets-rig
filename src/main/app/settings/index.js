@@ -236,7 +236,8 @@ export default function Settings(props) {
                           </div>
                         </div>
                         <small style={{ color: "red" }}>
-                          Enter a 3 letter word or abbriviation of your company.
+                          Enter your company/organisational code,
+                          eg: NHS/ASH/RHD/OE/R34/
                         </small>
                         <div className="input-group mb-3">
                           <input

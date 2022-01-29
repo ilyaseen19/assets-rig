@@ -13,6 +13,7 @@ import Departments from "./deps";
 import Help from "./help";
 import Faq from "./faq";
 import Branches from "./branches";
+import AssetDetails from "./others/assetDetails";
 
 function MainPage(props) {
   const [redirect, setRedirect] = useState(false);
@@ -68,7 +69,7 @@ function MainPage(props) {
   const getInit = async () => {
     const res = await functions._getInitials();
     if (res.length > 0) {
-      setInit(res[0].data);
+      setInit(res);
     }
   };
 
@@ -415,6 +416,16 @@ function MainPage(props) {
                       onCreate={_clicked}
                       getAssets={_handleGetAssets}
                       assets={assets}
+                      loading={loading}
+                      msg={msg}
+                      type={type}
+                      notify={notify}
+                      departments={departments}
+                      onEditAsset={_handleEditAsset}
+                      onDel={_handleDelete}
+                      user={user}
+                      value={value}
+                      stopLoading={() => setLoading(false)}
                     />
                   )}
                 />
@@ -491,6 +502,10 @@ function MainPage(props) {
                 <Route
                   path="/main/faq"
                   render={(props) => <Faq {...props} />}
+                />
+                <Route
+                  path="/main/asset-details"
+                  render={(props) => <AssetDetails {...props} />}
                 />
               </Switch>
             )}

@@ -225,7 +225,7 @@ function App() {
           OLD = 0,
           DAMAGED = 0,
           REPAIRS = 0,
-          TRANSFERED,
+          TRANSFERED = 0,
         } = groups;
         if (item.CONDITION === "NEW") {
           return { ...groups, NEW: NEW + 1 };

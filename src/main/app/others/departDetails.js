@@ -86,8 +86,8 @@ export default function DepartDetails(props) {
     var res = [];
     const assets = data.assets;
     assets.forEach((item) => {
-      if (!res.includes(item.ASSETTYPE)) {
-        res.push(item.ASSETTYPE);
+      if (!res.includes(item.ASSETTYPE.split("-")[0])) {
+        res.push(item.ASSETTYPE.split("-")[0]);
       }
     });
     return res;

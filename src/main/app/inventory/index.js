@@ -20,9 +20,9 @@ export default function Inventory(props) {
   const group = () => {
     let newArr = [];
     assets.forEach((item) => {
-      if (newArr.some((e) => e.ASSETTYPE === item.ASSETTYPE.split("-")[0])) {
+      if (newArr.some((e) => e.ASSETTYPE === item.ASSETTYPE)) {
         newArr.map((e) => {
-          if (e.ASSETTYPE === item.ASSETTYPE.split("-")[0]) {
+          if (e.ASSETTYPE === item.ASSETTYPE) {
             e.assetCount += 1;
             let v = parseInt(e.value);
             let V = parseInt(item.VALUE);
@@ -36,7 +36,7 @@ export default function Inventory(props) {
         });
       } else {
         newArr.push({
-          ASSETTYPE: item.ASSETTYPE.split("-")[0],
+          ASSETTYPE: item.ASSETTYPE,
           assetCount: 1,
           active: item.STATUS === "ACTIVE" ? 1 : 0,
           inActive: item.STATUS === "IN-ACTIVE" ? 1 : 0,

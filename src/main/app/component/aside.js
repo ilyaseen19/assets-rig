@@ -133,7 +133,7 @@ export default function Aside(props) {
     <nav className="sidebar vertical-scroll dark_sidebar ps-container ps-theme-default ps-active-y">
       <div className="logo d-flex justify-content-between">
         <span>
-          <img src={logo} alt="logo" height={45} />
+          <img src={logo} alt="logo" height={45} width={30} />
         </span>
       </div>
       <ul id="sidebar_menu">
@@ -386,7 +386,7 @@ export default function Aside(props) {
           }}
         >
           <span>ASSETS REG MANAGEMENT SOFTWARE</span>
-          <span>BETA VERSION 0.0.1</span>
+          <span>VERSION 1.0.0</span>
         </span>
       </span>
     </nav>

@@ -38,7 +38,8 @@ export default function Assets(props) {
     if (value !== "") {
       assets.forEach((item) => {
         if (
-          item.SERIALNUMBER.toLocaleUpperCase().includes(value.toUpperCase())
+          item.SERIALNUMBER.toUpperCase().includes(value.toUpperCase()) ||
+          item.ASSETTYPE.toUpperCase().includes(value.toUpperCase())
         ) {
           newArr.push(item);
         }
@@ -178,7 +179,7 @@ export default function Assets(props) {
                       className="form-control"
                       name="inputSearch"
                       id="inputSearch"
-                      placeholder="Search Assets by serial number"
+                      placeholder="Search Assets by serial number or asset type"
                       onChange={(e) => _handleSearch(e.target.value)}
                     />
                   </div>

@@ -47,7 +47,7 @@ export default function Faq(props) {
                       <span>5.QRcode app</span>
                     </span>
                     <h3 className="mt-3">CURRENT VERSION</h3>
-                    <span>ASSETS REG BETA 0.0.1</span>
+                    <span>ASSETS REG 1.0.0</span>
                     <p>-----</p>
                     <span>POWERED BY</span>
                     <h5>CODE LAB FIRM</h5>

@@ -14,6 +14,7 @@ export default function AddAsset(props) {
   const [price, setPrice] = useState("");
   const [condition, setCondition] = useState("");
   const [date, setDate] = useState("");
+  const [init, setInit] = useState("");
 
   const [mtype, setmType] = useState("");
   const [msg, setMsg] = useState("");
@@ -39,7 +40,8 @@ export default function AddAsset(props) {
       price === "" ||
       condition === "" ||
       date === "" ||
-      Qt === ""
+      Qt === "" ||
+      init === ""
     ) {
       setmType("danger");
       setMsg("All fields are required!");
@@ -57,7 +59,7 @@ export default function AddAsset(props) {
         price,
         condition,
         date,
-        initials,
+        init,
         Qt,
         branch,
         dntBy,
@@ -233,6 +235,35 @@ export default function AddAsset(props) {
               </div>
               <div className="col-md-6">
                 <div className="white_box">
+                  <div className="input-group mb-3">
+                    <div className="input-group-prepend">
+                      <label
+                        className="input-group-text"
+                        htmlFor="inputGroupSelect01"
+                      >
+                        Organisation's Code:
+                      </label>
+                    </div>
+                    {initials.length === 0 ? (
+                      <select className="custom-select" disabled>
+                        <option>No Organisational Code added yet</option>
+                      </select>
+                    ) : (
+                      <select
+                        className="custom-select"
+                        onChange={(e) => setInit(e.target.value)}
+                      >
+                        <option>Select Organisation's code</option>
+                        {initials.map((item, index) => {
+                          return (
+                            <option value={item.data} key={index}>
+                              {item.data}
+                            </option>
+                          );
+                        })}
+                      </select>
+                    )}
+                  </div>
                   <div className="input-group mb-3">
                     <div className="input-group-prepend">
                       <span className="input-group-text" id="basic-addon3">

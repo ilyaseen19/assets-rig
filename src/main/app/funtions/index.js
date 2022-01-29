@@ -198,8 +198,8 @@ const _addDepartment = async (data) => {
 const _addInitials = async (data) => {
   var results;
   const getinit = await _getInitials();
-  if (getinit.length > 1) {
-    results = "Company initials has already been set!";
+  if (getinit.some((item) => item.type === data)) {
+    results = "This code already exist!";
   } else {
     initialsStore.create({ data });
     results = "Initials is successfully set!";
@@ -217,7 +217,7 @@ const _createAsset = async (data) => {
     price,
     condition,
     date,
-    initials,
+    init,
     Qt,
     branch,
     dntBy,
@@ -236,7 +236,7 @@ const _createAsset = async (data) => {
       brand: brand,
       dp: dp,
       value: price,
-      initials: initials,
+      initials: init,
       condition: condition,
       date: date,
       quantity: Qt,

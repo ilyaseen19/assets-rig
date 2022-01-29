@@ -4053,7 +4053,7 @@ table.dataTable {
 
 /* line 43, G:/admin_project/6 admin/sales/scss/_sidebar.scss */
 .sidebar .logo img {
-  width: 100%;
+  width: 80%;
 }
 
 @media (max-width: 991px) {
