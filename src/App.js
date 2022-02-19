@@ -5,7 +5,7 @@ import LoadingPage from "./main/app/component/loaders/loading";
 import MainPage from "./main/app/main";
 import _fetchAssets from "./main/app/funtions";
 import { functions } from "./main/app/funtions";
-const { Data } = require("./main/app/data/data");
+const { Data } = require("./main/app/funtions/data");
 const keyStoreDbInstance = Data.keyStoreDbInstance;
 const typesStore = Data.assetTypeDbInstance;
 const departmentStore = Data.departmentDbInstance;

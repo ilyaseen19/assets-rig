@@ -1,4 +1,4 @@
-const { Data } = require("../data/data");
+const { Data } = require("./data");
 const keyStoreDbInstance = Data.keyStoreDbInstance;
 const typesStore = Data.assetTypeDbInstance;
 const departmentStore = Data.departmentDbInstance;
