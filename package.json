@@ -84,7 +84,8 @@
     "pack-app": "electron-builder --dir",
     "build": "yarn react-build && yarn electron-build",
     "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\"",
-    "deploy": "git add . && git status && git commit -m'commiting' && git push origin master"
+    "deploy": "git add . && git status && git commit -m'commiting' && git push origin master",
+    "d-v1.1.0": "git add . && git status && git commit -m'commiting-changes' && git push origin v1.1.0"
   },
   "eslintConfig": {
     "extends": [

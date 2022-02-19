@@ -275,9 +275,10 @@ export default function Aside(props) {
             <span style={{ marginTop: 5 }}>Departments</span>
           </Link>
         </li>
-        <li className={qr}>
+        {/* open this comment up to add qr to side bar <------- */}
+        {/* <li className={qr}>
           <Link
-            to="/main/ar"
+            to="/main/qr"
             className="has-arrow row"
             aria-expanded="false"
             style={{
@@ -297,7 +298,7 @@ export default function Aside(props) {
             </div>
             <span style={{ marginTop: 5 }}>QR</span>
           </Link>
-        </li>
+        </li> */}
         <li className={rep}>
           <Link
             to="/main/reports"
