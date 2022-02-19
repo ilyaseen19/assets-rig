@@ -14,6 +14,7 @@ import Help from "./help";
 import Faq from "./faq";
 import Branches from "./branches";
 import AssetDetails from "./others/assetDetails";
+import QRPage from "./qr/index";
 
 function MainPage(props) {
   const [redirect, setRedirect] = useState(false);
@@ -337,7 +338,7 @@ function MainPage(props) {
     var res = 0;
     const re = await functions._delMany(ids);
     if (re.success === 1) {
-      await props.getAssets()
+      await props.getAssets();
       res = 1;
     } else {
       res = 0;
@@ -408,7 +409,7 @@ function MainPage(props) {
                     />
                   )}
                 />
-                 <Route
+                <Route
                   path="/main/branches"
                   render={(props) => (
                     <Branches
@@ -506,6 +507,10 @@ function MainPage(props) {
                 <Route
                   path="/main/asset-details"
                   render={(props) => <AssetDetails {...props} />}
+                />
+                <Route
+                  path="/main/qr"
+                  render={(props) => <QRPage {...props} />}
                 />
               </Switch>
             )}

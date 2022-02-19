@@ -2,7 +2,6 @@ import { useState } from "react";
 import LoadingPage from "../app/component/loaders/loading";
 import Notifications from "../app/component/notifications";
 import log_bg from "../app/component/images/log_bg.jpg";
-import loginback from "../app/component/images/login-hero.svg";
 import logo from "../app/component/images/assets_reg_1.png";
 import "../app/main.css";
 

@@ -6,6 +6,7 @@ import assetIcon from "./images/img/menu-icon/3.svg";
 import invIcon from "./images/img/menu-icon/4.svg";
 import depIcon from "./images/img/menu-icon/11.svg";
 import repIcon from "./images/img/menu-icon/5.svg";
+import qrIcon from "./images/img/menu-icon/16.svg";
 import setIcon from "./images/img/menu-icon/6.svg";
 import hlpIcon from "./images/img/menu-icon/9.svg";
 import abtIcon from "./images/img/menu-icon/12.svg";
@@ -21,6 +22,7 @@ export default function Aside(props) {
   const [faq, setFaq] = useState("");
   const [hlp, setHelp] = useState("");
   const [br, setBr] = useState("");
+  const [qr, setQR] = useState("");
 
   const toggle = (check) => {
     switch (check) {
@@ -34,6 +36,7 @@ export default function Aside(props) {
         setFaq("");
         setHelp("");
         setBr("");
+        setQR("");
         break;
       case "ass":
         setDash("");
@@ -45,6 +48,7 @@ export default function Aside(props) {
         setFaq("");
         setHelp("");
         setBr("");
+        setQR("");
         break;
       case "inv":
         setDash("");
@@ -56,6 +60,7 @@ export default function Aside(props) {
         setFaq("");
         setHelp("");
         setBr("");
+        setQR("");
         break;
       case "dep":
         setDash("");
@@ -67,6 +72,7 @@ export default function Aside(props) {
         setFaq("");
         setHelp("");
         setBr("");
+        setQR("");
         break;
       case "rep":
         setDash("");
@@ -78,6 +84,7 @@ export default function Aside(props) {
         setFaq("");
         setHelp("");
         setBr("");
+        setQR("");
         break;
       case "set":
         setDash("");
@@ -89,6 +96,7 @@ export default function Aside(props) {
         setFaq("");
         setHelp("");
         setBr("");
+        setQR("");
         break;
       case "faq":
         setDash("");
@@ -100,6 +108,7 @@ export default function Aside(props) {
         setFaq("mm-active");
         setHelp("");
         setBr("");
+        setQR("");
         break;
       case "hlp":
         setDash("");
@@ -111,6 +120,7 @@ export default function Aside(props) {
         setFaq("");
         setHelp("mm-active");
         setBr("");
+        setQR("");
         break;
       case "br":
         setDash("");
@@ -122,6 +132,19 @@ export default function Aside(props) {
         setFaq("");
         setHelp("");
         setBr("mm-active");
+        setQR("");
+        break;
+      case "qr":
+        setDash("");
+        setAss("");
+        setInv("");
+        setDep("");
+        setRep("");
+        setSett("");
+        setFaq("");
+        setHelp("");
+        setBr("");
+        setQR("mm-active");
         break;
 
       default:
@@ -250,6 +273,29 @@ export default function Aside(props) {
               <img src={depIcon} alt="logo" />
             </div>
             <span style={{ marginTop: 5 }}>Departments</span>
+          </Link>
+        </li>
+        <li className={qr}>
+          <Link
+            to="/main/ar"
+            className="has-arrow row"
+            aria-expanded="false"
+            style={{
+              width: "100%",
+              justifyContent: "left",
+              alignItems: "center",
+              color: "white",
+              marginLeft: 50,
+              marginBottom: 20,
+            }}
+            type="button"
+            role="button"
+            onClick={() => toggle("qr")}
+          >
+            <div className="icon_menu" style={{ marginRight: 10 }}>
+              <img src={qrIcon} alt="logo" />
+            </div>
+            <span style={{ marginTop: 5 }}>QR</span>
           </Link>
         </li>
         <li className={rep}>
