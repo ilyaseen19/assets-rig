@@ -364,6 +364,10 @@ const _editAsset = async (data) => {
       status: data.status,
       value: data.value,
       tran: data.tran,
+      branch: data.branch,
+      dp: data.dp,
+      date: data.date,
+      donatedBy: data.donatedBy,
     }),
   })
     .then((response) => response.json())

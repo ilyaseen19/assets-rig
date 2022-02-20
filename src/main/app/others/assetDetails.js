@@ -79,6 +79,10 @@ export default function AssetDetails(props) {
           status: item.STATUS,
           value: item.VALUE,
           tran: item.TRANSFEREDTO,
+          branch: item.BRANCH,
+          dp: item.DONATEDORPURCHASED,
+          date: item.DATEOFPURCHASEORDONATED,
+          donatedBy: item.DONATEDBY,
         };
         await props.onEditAsset(data);
       }
@@ -103,6 +107,10 @@ export default function AssetDetails(props) {
               status: item.STATUS,
               value: item.VALUE,
               tran: tran,
+              branch: item.BRANCH,
+              dp: item.DONATEDORPURCHASED,
+              date: item.DATEOFPURCHASEORDONATED,
+              donatedBy: item.DONATEDBY,
             };
             props.onEditAsset(data);
           }
@@ -116,6 +124,10 @@ export default function AssetDetails(props) {
             status: item.STATUS,
             value: item.VALUE,
             tran: item.TRANSFEREDTO,
+            branch: item.BRANCH,
+            dp: item.DONATEDORPURCHASED,
+            date: item.DATEOFPURCHASEORDONATED,
+            donatedBy: item.DONATEDBY,
           };
           props.onEditAsset(data);
         }
@@ -135,6 +147,10 @@ export default function AssetDetails(props) {
           status: status,
           value: item.VALUE,
           tran: item.TRANSFEREDTO,
+          branch: item.BRANCH,
+          dp: item.DONATEDORPURCHASED,
+          date: item.DATEOFPURCHASEORDONATED,
+          donatedBy: item.DONATEDBY,
         };
         props.onEditAsset(data);
       }
