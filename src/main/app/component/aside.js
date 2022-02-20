@@ -10,6 +10,7 @@ import setIcon from "./images/img/menu-icon/6.svg";
 import hlpIcon from "./images/img/menu-icon/9.svg";
 import abtIcon from "./images/img/menu-icon/12.svg";
 import brIcon from "./images/img/menu-icon/14.svg";
+import "../main.css";
 
 export default function Aside(props) {
   const [actDash, setDash] = useState("mm-active");
@@ -130,227 +131,237 @@ export default function Aside(props) {
   };
 
   return (
-    <nav className="sidebar vertical-scroll dark_sidebar ps-container ps-theme-default ps-active-y">
+    <nav className="sidebar dark_sidebar ps-container ps-theme-default ps-active-y">
       <div className="logo d-flex justify-content-between">
         <span>
           <img src={logo} alt="logo" height={45} width={30} />
         </span>
       </div>
-      <ul id="sidebar_menu">
-        <li className={actDash}>
-          <Link
-            to="/main/dashbaord"
-            className="has-arrow row"
-            style={{
-              width: "100%",
-              justifyContent: "left",
-              alignItems: "center",
-              color: "white",
-              marginLeft: 50,
-              marginBottom: 20,
-            }}
-            aria-expanded="false"
-            type="button"
-            role="button"
-            onClick={() => toggle("dash")}
-          >
-            <div className="icon_menu" style={{ marginRight: 10 }}>
-              <img src={dashIcon} alt="logo" />
-            </div>
-            <span style={{ marginTop: 5 }}>Dashboard</span>
-          </Link>
-        </li>
-        <li className={ass}>
-          <Link
-            to="/main/assets"
-            className="has-arrow row"
-            aria-expanded="false"
-            style={{
-              width: "100%",
-              justifyContent: "left",
-              alignItems: "center",
-              color: "white",
-              marginLeft: 50,
-              marginBottom: 20,
-            }}
-            type="button"
-            role="button"
-            onClick={() => toggle("ass")}
-          >
-            <div className="icon_menu" style={{ marginRight: 10 }}>
-              <img src={assetIcon} alt="logo" />
-            </div>
-            <span style={{ marginTop: 5 }}>Assets</span>
-          </Link>
-        </li>
-        <li className={br}>
-          <Link
-            to="/main/branches"
-            className="has-arrow row"
-            aria-expanded="false"
-            style={{
-              width: "100%",
-              justifyContent: "left",
-              alignItems: "center",
-              color: "white",
-              marginLeft: 50,
-              marginBottom: 20,
-            }}
-            type="button"
-            role="button"
-            onClick={() => toggle("br")}
-          >
-            <div className="icon_menu" style={{ marginRight: 10 }}>
-              <img src={brIcon} alt="logo" />
-            </div>
-            <span style={{ marginTop: 5 }}>Branches</span>
-          </Link>
-        </li>
-        <li className={inv}>
-          <Link
-            to="/main/inventory"
-            className="has-arrow row"
-            aria-expanded="false"
-            style={{
-              width: "100%",
-              justifyContent: "left",
-              alignItems: "center",
-              color: "white",
-              marginLeft: 50,
-              marginBottom: 20,
-            }}
-            type="button"
-            role="button"
-            onClick={() => toggle("inv")}
-          >
-            <div className="icon_menu" style={{ marginRight: 10 }}>
-              <img src={invIcon} alt="logo" />
-            </div>
-            <span style={{ marginTop: 5 }}>Inventory</span>
-          </Link>
-        </li>
-        <li className={dep}>
-          <Link
-            to="/main/departments"
-            className="has-arrow row"
-            aria-expanded="false"
-            style={{
-              width: "100%",
-              justifyContent: "left",
-              alignItems: "center",
-              color: "white",
-              marginLeft: 50,
-              marginBottom: 20,
-            }}
-            type="button"
-            role="button"
-            onClick={() => toggle("dep")}
-          >
-            <div className="icon_menu" style={{ marginRight: 10 }}>
-              <img src={depIcon} alt="logo" />
-            </div>
-            <span style={{ marginTop: 5 }}>Departments</span>
-          </Link>
-        </li>
-        <li className={rep}>
-          <Link
-            to="/main/reports"
-            className="has-arrow row"
-            aria-expanded="false"
-            style={{
-              width: "100%",
-              justifyContent: "left",
-              alignItems: "center",
-              color: "white",
-              marginLeft: 50,
-              marginBottom: 20,
-            }}
-            type="button"
-            role="button"
-            onClick={() => toggle("rep")}
-          >
-            <div className="icon_menu" style={{ marginRight: 10 }}>
-              <img src={repIcon} alt="logo" />
-            </div>
-            <span style={{ marginTop: 5 }}>Reports</span>
-          </Link>
-        </li>
-        <li className={sett}>
-          <Link
-            to="/main/settings"
-            className="has-arrow row"
-            aria-expanded="false"
-            style={{
-              width: "100%",
-              justifyContent: "left",
-              alignItems: "center",
-              color: "white",
-              marginLeft: 50,
-              marginBottom: 20,
-            }}
-            type="button"
-            role="button"
-            onClick={() => toggle("set")}
-          >
-            <div className="icon_menu" style={{ marginRight: 10 }}>
-              <img src={setIcon} alt="logo" />
-            </div>
-            <span style={{ marginTop: 5 }}>Settings</span>
-          </Link>
-        </li>
-        <li className={hlp}>
-          <Link
-            to="/main/help"
-            className="has-arrow row"
-            aria-expanded="false"
-            style={{
-              width: "100%",
-              justifyContent: "left",
-              alignItems: "center",
-              color: "white",
-              marginLeft: 50,
-              marginBottom: 20,
-            }}
-            type="button"
-            role="button"
-            onClick={() => toggle("hlp")}
-          >
-            <div className="icon_menu" style={{ marginRight: 10 }}>
-              <img src={hlpIcon} alt="logo" />
-            </div>
-            <span style={{ marginTop: 5 }}>Help</span>
-          </Link>
-        </li>
-        <li className={faq}>
-          <Link
-            to="/main/faq"
-            className="has-arrow row"
-            aria-expanded="false"
-            style={{
-              width: "100%",
-              justifyContent: "left",
-              alignItems: "center",
-              color: "white",
-              marginLeft: 50,
-              marginBottom: 20,
-            }}
-            type="button"
-            role="button"
-            onClick={() => toggle("faq")}
-          >
-            <div className="icon_menu" style={{ marginRight: 10 }}>
-              <img src={abtIcon} alt="logo" />
-            </div>
-            <span style={{ marginTop: 5 }}>About</span>
-          </Link>
-        </li>
-      </ul>
+      <div
+        className="sd"
+        style={{
+          height: "83%",
+          display: "flex",
+          flexDirection: "column",
+          overflowY: "scroll",
+        }}
+      >
+        <ul id="sidebar_menu">
+          <li className={actDash}>
+            <Link
+              to="/main/dashbaord"
+              className="has-arrow row"
+              style={{
+                width: "100%",
+                justifyContent: "left",
+                alignItems: "center",
+                color: "white",
+                marginLeft: 50,
+                marginBottom: 20,
+              }}
+              aria-expanded="false"
+              type="button"
+              role="button"
+              onClick={() => toggle("dash")}
+            >
+              <div className="icon_menu" style={{ marginRight: 10 }}>
+                <img src={dashIcon} alt="logo" />
+              </div>
+              <span style={{ marginTop: 5 }}>Dashboard</span>
+            </Link>
+          </li>
+          <li className={ass}>
+            <Link
+              to="/main/assets"
+              className="has-arrow row"
+              aria-expanded="false"
+              style={{
+                width: "100%",
+                justifyContent: "left",
+                alignItems: "center",
+                color: "white",
+                marginLeft: 50,
+                marginBottom: 20,
+              }}
+              type="button"
+              role="button"
+              onClick={() => toggle("ass")}
+            >
+              <div className="icon_menu" style={{ marginRight: 10 }}>
+                <img src={assetIcon} alt="logo" />
+              </div>
+              <span style={{ marginTop: 5 }}>Assets</span>
+            </Link>
+          </li>
+          <li className={br}>
+            <Link
+              to="/main/branches"
+              className="has-arrow row"
+              aria-expanded="false"
+              style={{
+                width: "100%",
+                justifyContent: "left",
+                alignItems: "center",
+                color: "white",
+                marginLeft: 50,
+                marginBottom: 20,
+              }}
+              type="button"
+              role="button"
+              onClick={() => toggle("br")}
+            >
+              <div className="icon_menu" style={{ marginRight: 10 }}>
+                <img src={brIcon} alt="logo" />
+              </div>
+              <span style={{ marginTop: 5 }}>Branches</span>
+            </Link>
+          </li>
+          <li className={inv}>
+            <Link
+              to="/main/inventory"
+              className="has-arrow row"
+              aria-expanded="false"
+              style={{
+                width: "100%",
+                justifyContent: "left",
+                alignItems: "center",
+                color: "white",
+                marginLeft: 50,
+                marginBottom: 20,
+              }}
+              type="button"
+              role="button"
+              onClick={() => toggle("inv")}
+            >
+              <div className="icon_menu" style={{ marginRight: 10 }}>
+                <img src={invIcon} alt="logo" />
+              </div>
+              <span style={{ marginTop: 5 }}>Inventory</span>
+            </Link>
+          </li>
+          <li className={dep}>
+            <Link
+              to="/main/departments"
+              className="has-arrow row"
+              aria-expanded="false"
+              style={{
+                width: "100%",
+                justifyContent: "left",
+                alignItems: "center",
+                color: "white",
+                marginLeft: 50,
+                marginBottom: 20,
+              }}
+              type="button"
+              role="button"
+              onClick={() => toggle("dep")}
+            >
+              <div className="icon_menu" style={{ marginRight: 10 }}>
+                <img src={depIcon} alt="logo" />
+              </div>
+              <span style={{ marginTop: 5 }}>Departments</span>
+            </Link>
+          </li>
+          <li className={rep}>
+            <Link
+              to="/main/reports"
+              className="has-arrow row"
+              aria-expanded="false"
+              style={{
+                width: "100%",
+                justifyContent: "left",
+                alignItems: "center",
+                color: "white",
+                marginLeft: 50,
+                marginBottom: 20,
+              }}
+              type="button"
+              role="button"
+              onClick={() => toggle("rep")}
+            >
+              <div className="icon_menu" style={{ marginRight: 10 }}>
+                <img src={repIcon} alt="logo" />
+              </div>
+              <span style={{ marginTop: 5 }}>Reports</span>
+            </Link>
+          </li>
+          <li className={sett}>
+            <Link
+              to="/main/settings"
+              className="has-arrow row"
+              aria-expanded="false"
+              style={{
+                width: "100%",
+                justifyContent: "left",
+                alignItems: "center",
+                color: "white",
+                marginLeft: 50,
+                marginBottom: 20,
+              }}
+              type="button"
+              role="button"
+              onClick={() => toggle("set")}
+            >
+              <div className="icon_menu" style={{ marginRight: 10 }}>
+                <img src={setIcon} alt="logo" />
+              </div>
+              <span style={{ marginTop: 5 }}>Settings</span>
+            </Link>
+          </li>
+          <li className={hlp}>
+            <Link
+              to="/main/help"
+              className="has-arrow row"
+              aria-expanded="false"
+              style={{
+                width: "100%",
+                justifyContent: "left",
+                alignItems: "center",
+                color: "white",
+                marginLeft: 50,
+                marginBottom: 20,
+              }}
+              type="button"
+              role="button"
+              onClick={() => toggle("hlp")}
+            >
+              <div className="icon_menu" style={{ marginRight: 10 }}>
+                <img src={hlpIcon} alt="logo" />
+              </div>
+              <span style={{ marginTop: 5 }}>Help</span>
+            </Link>
+          </li>
+          <li className={faq}>
+            <Link
+              to="/main/faq"
+              className="has-arrow row"
+              aria-expanded="false"
+              style={{
+                width: "100%",
+                justifyContent: "left",
+                alignItems: "center",
+                color: "white",
+                marginLeft: 50,
+                marginBottom: 20,
+              }}
+              type="button"
+              role="button"
+              onClick={() => toggle("faq")}
+            >
+              <div className="icon_menu" style={{ marginRight: 10 }}>
+                <img src={abtIcon} alt="logo" />
+              </div>
+              <span style={{ marginTop: 5 }}>About</span>
+            </Link>
+          </li>
+        </ul>
+      </div>
       <span
         style={{
           display: "flex",
           width: "100%",
           paddingLeft: "30px",
-          marginTop: "30px",
+          marginTop: "5px",
           flexDirection: "column",
         }}
       >

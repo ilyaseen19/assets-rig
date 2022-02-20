@@ -157,10 +157,14 @@ export default function Branches(props) {
         />
         <div className="row">
           <div className="col-lg-4">
-            <div className="white_card " style={{ height: "80vh" }}>
+            <div className="white_card ">
               <div
                 className="white_card_body"
-                style={{ display: "flex", flexDirection: "column" }}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  height: "80vh",
+                }}
               >
                 <span
                   style={{
@@ -173,7 +177,13 @@ export default function Branches(props) {
                 >
                   Branch List
                 </span>
-                <span style={{ overflowY: "scroll" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    overflowY: "scroll",
+                  }}
+                >
                   {group().map((item, index) => {
                     return (
                       <span
@@ -187,7 +197,7 @@ export default function Branches(props) {
                       </span>
                     );
                   })}
-                </span>
+                </div>
               </div>
             </div>
           </div>

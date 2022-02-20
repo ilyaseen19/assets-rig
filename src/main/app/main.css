@@ -54,6 +54,12 @@ html {
   background: transparent; /* Optional: just make scrollbar invisible */
 }
 /* Optional: show position indicator in red */
-::-webkit-scrollbar-thumb {
+/* ::-webkit-scrollbar-thumb {
   background: #ff0000;
+} */
+
+.sd:hover {
+  border-right-width: 3px;
+  border-right-color: #fff;
+  border-right: solid;
 }
