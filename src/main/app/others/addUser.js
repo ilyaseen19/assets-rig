@@ -136,7 +136,7 @@ export default function AddUser(props) {
                       aria-describedby="basic-addon3"
                       type="password"
                       onChange={(e) =>
-                        setPassword(e.target.value.toUpperCase())
+                        setPassword(e.target.value)
                       }
                     />
                   </div>
