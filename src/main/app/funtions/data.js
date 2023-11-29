@@ -8,9 +8,9 @@ const branchDbInstance = remote.getGlobal("branchStore");
 
 // cloud base urls
 const apiKeyCheckUrl =
-  "https://assets-regis.herokuapp.com/admin/customers/getCustomer/4768-Administration-657-admin-7643-c";
-const usersBaseUrl = "https://assets-regis.herokuapp.com/customers/users/";
-const assetBaseUrl = "https://assets-regis.herokuapp.com/customers/assets/";
+  "https://assets-reg.onrender.com/admin/customers/getCustomer/4768-Administration-657-admin-7643-c";
+const usersBaseUrl = "https://assets-reg.onrender.com/customers/users/";
+const assetBaseUrl = "https://assets-reg.onrender.com/customers/assets/";
 
 // export data
 export const Data = {
